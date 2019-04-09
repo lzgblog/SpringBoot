@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>6666</title>
+
+    <!--在thymeleaf模板下时-->
+    <link rel="shortcut icon" th:href="@{/static/favicon.ico}"/>
+    <link rel="bookmark" th:href="@{/static/favicon.ico}"/>
+
+</head>
+<body>
+   <div th:text="${model}"></div>
+<hr/>
+    <div th:text="${s}" th:each="s:${list}"></div>
+</body>
+<hr/>
+    <div th:text="${string}"></div>
+</html>

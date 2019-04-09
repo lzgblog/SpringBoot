@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--使用thymeleaf需要加这个-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+
+    <link rel="shortcut icon" th:href="@{/static/favicon.ico}"/>
+    <link rel="bookmark" th:href="@{/static/favicon.ico}"/>
+
+</head>
+<body>
+    从后端返回的数据：
+    <!--th：text  给其输出内容
+        th:each="l:${list}"  遍历list并以 l 作为引用
+        th:each="l:${list[1]}" 获取list集合中的第二位
+    -->
+    <div th:text="${hello}"></div>
+
+<hr/>
+    遍历list集合：
+    <div th:text="${l}" th:each="l:${list}"></div>
+</body>
+</html>

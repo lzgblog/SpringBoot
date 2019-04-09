@@ -1,0 +1,35 @@
+#配置dataSource的相关配置
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/springboot_data
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+#springboot默认使用class org.apache.tomcat.jdbc.pool.DataSource的数据源
+#使用其他的数据源需要手动配置类型  需要先添加druid的依赖
+    type: com.alibaba.druid.pool.DruidDataSource
+#配置druid数据源的相关信息
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    filters: stat,wall,log4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+    #开启自动建表功能  会加载resource下的.sql文件  1.5.9版本配置就会出错
+# schema:
+    #    ##      - classpath:department.sql
+
+
+
+

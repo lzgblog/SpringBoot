@@ -1,0 +1,39 @@
+#server:
+#  port: 8081
+#person:
+#  age: 18
+#  name: lili
+#  dog:
+#    name: gg
+#    age: 5
+#
+##在Person类中定义map 和list集合的时候需要把泛型写上  否则报错
+#  map:
+#    k1: 1
+#    k2: 2
+#  list:
+#    - lisi
+#    - zhaoliu
+
+
+
+#激活指定profile
+
+server:
+  port: 8080
+spring:
+  profiles:
+    active: test
+
+---
+server:
+  port: 8081
+spring:
+  profiles: prod
+
+---
+server:
+    port: 8082
+
+spring:
+  profiles: test
